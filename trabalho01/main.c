@@ -48,7 +48,8 @@ void find_exit(int i, int j, char **matrix, struct delta delta_list[4],
     *done = 1;
     return;
   } else {
-    matrix[i][j] = 'O';
+    if (matrix[i][j] != 'E')
+      matrix[i][j] = 'O';
     for (int x = 0; x < 4; x++) {
       if (validate_path(i + delta_list[x].x, j + delta_list[x].y, matrix,
                         MAX_COLS, MAX_ROWS) == TRUE) {
@@ -57,7 +58,8 @@ void find_exit(int i, int j, char **matrix, struct delta delta_list[4],
                   done, MAX_COLS, MAX_ROWS, fwrite);
       }
     }
-    matrix[i][j] = '.';
+    if (matrix[i][j] != 'E')
+      matrix[i][j] = '.';
   }
 }
 
@@ -65,7 +67,6 @@ int main() {
 
   FILE *file;
   char file_path[] = "./labyrinth.txt";
-
   FILE *fwrite;
   char fwrite_path[] = "./solution.txt";
 

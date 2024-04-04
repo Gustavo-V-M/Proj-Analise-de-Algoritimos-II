@@ -4,6 +4,12 @@
 #define FALSE 0
 #define TRUE 1
 
+/*
+ * Autores:
+ * Gustavo Vilela Mitraud | 10400866
+ * João Pedro Zavanela Andreu | 10410137
+ * */
+
 struct delta {
   int x;
   int y;

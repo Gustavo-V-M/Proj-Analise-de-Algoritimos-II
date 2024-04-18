@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define EXIT_SUCCESS 0
+
+// Autor: Gustavo Vilela Mitraud
 void change(int n, int x, int V[x], int *S) {
   int sum = 0;
   int i = 0;
@@ -42,10 +44,18 @@ int main(int argc, char *argv[]) {
   int n = 12;
   int V[3] = {1, 2, 5};
 
-  printf("Guloso: ") int *S = (int *)malloc(3 * sizeof(int));
+  printf("Guloso: ");
+  int *S = (int *)malloc(3 * sizeof(int));
   change(12, 3, V, S);
-  for (int i = 0; i <)
-    printf("\n");
+
+  for (int i = 0; i < 3; i++)
+    printf("%i", S[i]);
+  printf("\n");
+
+  printf("Backtracking: ");
+  int *Z = (int *)malloc(3 * sizeof(int));
+  change_backtracking(12, 3, V, Z, 0, 0);
   free(S);
+  free(Z);
   return EXIT_SUCCESS;
 }

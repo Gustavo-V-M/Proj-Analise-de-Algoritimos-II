@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #define EXIT_SUCCESS 0
 
-int salto_sapo(int P[], int n, int delta, int *U){
+int parada(int P[], int n, int delta, int *U){
 	int u_index = 0;
 	U[u_index] = P[0];
 	int last_pos = P[0];
@@ -19,11 +19,11 @@ int salto_sapo(int P[], int n, int delta, int *U){
 }
 
 int main(int argc, int argv[]){
-	int n = 6;
+	int n = 4;
 	int delta = 2;
 	int p[] = {1,2,3,5,6,7};
 	int *u = (int*)malloc(n * sizeof(int));
-	int u_size = salto_sapo(p, n, delta, u);
+	int u_size = parada(p, n, delta, u);
 	for (int i = 0; i < u_size; i++){
 		printf("%i\n", u[i]);
 	}

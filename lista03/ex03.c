@@ -37,10 +37,11 @@ int calculateElagantSum(int **arr, int perm_count, int perm_size) {
   for (int i = 0; i < perm_count; i++) {
     sum = 0;
     for (int j = 0; j < perm_size; j++) {
-      if (j % 2 == 0) {
+      if (j == 0) {
         cur = arr[i][j];
       } else {
         sum = sum + abs(cur - arr[i][j]);
+        cur = arr[i][j];
       }
     }
     if (sum >= max) {

@@ -59,16 +59,34 @@ int LIS_recursive(int i) {
   }
 }
 
-int biggest_sub_sequence(int n) {
+int biggest_sub_sequence_recursive(int n) {
   int big = 1;
   for (int i = 0; i < n; i++) {
     big = max(big, LIS_recursive(i));
   }
   return big;
 }
+
+int biggest_sub_sequence_topdown(int n) {
+  int big = 1;
+  for (int i = 0; i < n; i++) {
+    big = max(big, LIS_topdown(i));
+  }
+  return big;
+}
+
 int main() {
   int n = 4;
-  int
+  num = (int*)malloc(n * sizeof(int));
+  memo = (int*)malloc(n * sizeof(int));
 
-      return EXIT_SUCCESS;
+  int test_recursive = biggest_sub_sequence_recursive(n);
+  int test_topdown = biggest_sub_sequence_topdown(n);
+  int test_bottomup = LIS_bottomup(n);
+
+
+  printf("%i\n", test_recursive);
+  printf("%i\n", test_topdown);
+  printf("%i\n", test_bottomup);
+  return EXIT_SUCCESS;
 }

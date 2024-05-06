@@ -4,13 +4,14 @@
 
 int corredor(int csize, int corredor[csize]){
 	int big = MINUS_INF;
+	int sum = 0;
 	for (int i = 0; i < csize; i++){
-		int soma = 0;
-		for (int j = i; j < csize; j++){
-			soma += corredor[j];
-			if (soma >= big){
-				big = soma;
-			}
+		sum += corredor[i];
+		if (sum >= big){
+			big = sum;
+		}
+		if (sum < 0){
+			sum = 0;
 		}
 
 		}
